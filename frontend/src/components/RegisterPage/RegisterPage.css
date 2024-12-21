@@ -262,12 +262,6 @@ input[type="number"] {
 	}
 }
 
-@media (max-width: 600px) {
-	.register-form-gender select {
-		/* width: 260px; */
-	}
-}
-
 @media (max-width: 575px) {
 	.register-container .register-header .register-kdsh {
 		top: 100px;

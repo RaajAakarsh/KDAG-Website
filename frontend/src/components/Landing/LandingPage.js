@@ -18,7 +18,9 @@ import Particless from "../Common/Particles/Particless";
 import video1 from "./Video/final.mp4";
 import certificate from "../../assets/KDSH2022Certificates/Akash Kundu.png";
 import Header from "./Header/Header";
-import associate_sponsor from "./../../assets/kdsh2025_associate_sponsor.jpg";
+import title_sponsor from "./../../assets/kdsh2025_title_sponsor.jpg";
+import media_sponsor_1 from "./../../assets/kdsh2025_media_sponsor_1.jpg";
+import media_sponsor_2 from "./../../assets/kdsh2025_media_sponsor_2.jpg";
 
 const LandingPage = () => {
 	const eligibleCandidates = [
@@ -259,7 +261,6 @@ const LandingPage = () => {
 						<div className="banner-heading-flex">
 							<div className="banner-heading">
 								<h3 style={{ fontSize: "35px", fontWeight: "600" }}>
-									{/* CampusPulse: Igniting Innovation with Data */}
 									Kharagpur Data Science Hackathon 2025
 								</h3>
 							</div>
@@ -272,114 +273,95 @@ const LandingPage = () => {
 							alt="Poster"
 							// height={250}
 						/>
-						<div className="banner-content">
-							{/* <p>
-								This competition combines innovation, technology, and data
-								science to challenge the brightest minds at IIT Kharagpur.
-								Participants will showcase their innovative ideas and harness
-								the power of Data Analytics to solve real world problems faced
-								by people in the IIT Kharagpur campus. Whether focusing on
-								enhancing Hall Management or academic-related matters, your data
-								driven solutions can elevate everyone's life on campus. This event
-                is generously sponsored by our esteemed alumnus, <a href="https://sibasmarak.github.io/" id="alumni-link" target="_blank">
-                Siba Smarak Panigrahi</a> , currently pursuing an M.Sc. at McGill University 
-                and Mila, Canada.
-							</p> */}
+						<div className="banner-content">	
 							<p>
-								"Without data, you're just another person with an opinion." - W.
-								Edwards Deming <br />
-								The 5th Edition of the{" "}
-								<strong>Kharagpur Data Science Hackathon</strong> (KDSH) is here
-								to push boundaries and redefine excellence in data science.
-								Prepare to immerse yourself in cutting-edge machine learning,
-								tackle real-world data challenges, and showcase your innovative
-								solutions. Gain exclusive opportunities to connect with industry
-								leaders, sharpen your expertise, and emerge as a trailblazer in
-								the world of data science. This is more than a competition; it's
-								a platform to push your limits, ignite your passion for data,
-								and create meaningful change.
+								We are thrilled to announce <strong>Pathway</strong> as the{" "}
+								<strong>Title Sponsor</strong> for the Kharagpur Data Science
+								Hackathon 2025, organized by Kharagpur Data Analytics Group in
+								association with Kshitij, the annual Techno-Management Fest of
+								IIT Kharagpur. This collaboration significantly elevates our
+								event, promising an engaging and impactful experience for all
+								participants. <br />
+								<strong>Pathway</strong> is a cutting-edge platform that
+								empowers artificial intelligence with live data. It enables
+								seamless data ingestion from over 300 sources with automatic
+								synchronization, live vector search, and anomaly alerts. By
+								providing accurate AI insights from vast amounts of connected
+								documents and data tables, Pathway stands at the forefront of
+								AI-driven data solutions.
 							</p>
 						</div>
 					</div>
 					{/* banner main ends */}
 
 					{/* banner info starts */}
-					<div className="banner-info-flex">
+					{/* <div className="banner-info-flex">
 						<div className="banner-info">
 							<FontAwesomeIcon icon={faCalendarDays} className="icon" shake />
 							<p id="banner-info">Coming Soon</p>
 							<FontAwesomeIcon icon={faLocationDot} className="icon" flip />
 							<p id="banner-info">Online</p>
 						</div>
-					</div>
-					{/* banner info ends */}
-
-					{/* banner button starts */}
-					{/* <div className="banner-button-flex">
-                            <a href="/register-kdsh">  <div className="banner-button">
-                        	<button class="btn-12" style={{ cursor: "pointer" }}> <span>Register Now</span>
-                        </button>
-    				</div>
-  							</a>
-  							<a href="/register-kdsh">  <button id="banner-button-media" class="btn-12">
-      							<span>Register Now</span>
-    					</button>
-  							</a>
 					</div> */}
+					{/* banner info ends */}
+					{/* banner button starts */}
+					<button className="register-now-button">
+						<a href="/register-kdsh">
+							<p>Register</p>
+						</a>
+					</button>
+					{/* banner button ends */}
 				</div>
-				{/* banner button ends */}
 
-				{/* <div className="kdsh2025_header">
-					Introducing Sponsors for KDSH 2025
+				<div className="kdsh2025_slider_outer">
+					<div className="kdsh2025_header">
+						Introducing Sponsors for KDSH 2025
+					</div>
+
+					<div className="kdsh2025-sponsor-slider">
+						<ul>
+							<li>
+								<img src={title_sponsor} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_1} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_2} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={title_sponsor} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_1} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_2} alt="title_sponsor" />
+							</li>
+						</ul>
+
+						<ul aria-hidden="true">
+							<li>
+								<img src={title_sponsor} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_1} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_2} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={title_sponsor} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_1} alt="title_sponsor" />
+							</li>
+							<li>
+								<img src={media_sponsor_2} alt="title_sponsor" />
+							</li>
+						</ul>
+					</div>
 				</div>
-
-				<div className="kdsh2025_sponsors">
-					<img src={associate_sponsor} alt="associate_sponsor" />
-				</div> */}
-
-				{/* <div className="kdsh2025-sponsor-slider">
-					<ul>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-					</ul>
-
-					<ul aria-hidden="true">
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-						<li>
-							<img src={associate_sponsor} alt="associate_sponsor" />
-						</li>
-					</ul>
-				</div> */}
 
 				<div className="banner-countdown">
 					<div className="banner-count-flex">
@@ -420,7 +402,7 @@ const LandingPage = () => {
 							</div>
 						</form>
 					</div> */}
-					{/* <div className="query-box-flex">
+				{/* <div className="query-box-flex">
 						<input type="text" id="query-box-name" />
 						<input type="text" id="query-box-email" />
 						<input type="text" id="query-box-query" />
