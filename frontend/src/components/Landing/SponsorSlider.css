@@ -14,6 +14,28 @@
 	border: solid 2px rgba(255, 255, 255, 0.758);
 	border-radius: 50px;
 }
+
+.kdsh2025-title-sponsor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 200px;
+	flex-direction: row;
+	padding-right: 200px;
+	background-image: url("./../../assets/pathway_asset.svg");
+	margin-bottom: 50px;
+}
+
+.kdsh2025_title_sponsor_intro {
+	font-size: 50px;
+	font-weight: 900;
+	padding-left: 200px;
+	color: white;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .kdsh2025_sponsors {
 	height: 250px;
 	display: flex;
@@ -59,6 +81,7 @@
 	height: 295px;
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(0, 255, 255, 0.286);
+	/* min-width: 295px; */
 }
 
 .kdsh2025-sponsor-slider:hover ul {
@@ -81,6 +104,29 @@
 		border: solid 2px rgba(255, 255, 255, 0.758);
 		border-radius: 0px;
 		margin-top: 75px;
+	}
+
+	.kdsh2025-title-sponsor {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: auto;
+		flex-direction: column;
+		padding-right: 0px;
+		margin-bottom: 50px;
+	}
+	.kdsh2025_title_sponsor_intro {
+		font-size: 25px;
+		text-wrap: nowrap;
+		font-weight: 900;
+		padding-left: 0px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.kdsh2025-title-sponsor img {
+		height: 150px;
 	}
 }
 

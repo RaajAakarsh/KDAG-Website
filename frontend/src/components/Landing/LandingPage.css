@@ -262,6 +262,21 @@ a {
 	border-radius: 50px;
 	transition: all 0.4s;
 }
+.temp-banner-heading-flex-container {
+	position: relative;
+	bottom: 595px;
+	padding: 10px 5px;
+	margin: 0 20px;
+	overflow: hidden;
+	transition: all 0.4s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.temp-banner-heading-flex-container img {
+	height: 175px;
+}
 .banner-heading-flex {
 	display: flex;
 	flex-direction: row-reverse;
@@ -274,10 +289,34 @@ a {
 	border-radius: 50px;
 	transition: all 0.4s;
 }
+
 .banner-heading-flex-container:hover {
 	border: white 2px solid;
 }
+
 .banner-heading-flex-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		45deg,
+		transparent,
+		transparent,
+		rgba(255, 255, 255, 0.356),
+		rgba(255, 255, 255, 0.75),
+		rgba(255, 255, 255, 0.356),
+		transparent,
+		transparent
+	);
+	animation: heading-slide-through 3s ease-in infinite;
+	transform-origin: bottom left;
+	z-index: -1;
+}
+
+.temp-banner-heading-flex-container::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -327,12 +366,59 @@ a {
 .banner-content-flex {
 	height: 310px;
 	position: relative;
-	bottom: 540px;
+	bottom: 575px;
 	display: flex;
 	flex-direction: row;
 	padding-right: 5.7%;
 	justify-content: space-between;
 	margin: 0 200px;
+}
+
+
+.register-now-button {
+	background: transparent;
+	min-width: 300px;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	bottom: 582px;
+}
+
+.register-now-button a {
+	background: transparent;
+	min-width: 300px;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+.register-now-button p {
+	text-align: center;
+	background-image: linear-gradient(
+		to right,
+		#1c1cf0,
+		#40dfe4,
+		#30dd8a,
+		#269660
+	);
+	padding: 10px;
+	background-size: 300% 100%;
+	width: 100%;
+	color: white;
+	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+	border-radius: 30px;
+	border: none;
+	transition: 0.3s;
+}
+
+.register-now-button p:hover {
+	background-position: 100% 0;
+	text-shadow: 0 0 10px white;
 }
 .banner-poster {
 	height: 315px;
@@ -386,8 +472,28 @@ a {
 	color: black;
 }
 
+.temp-banner-heading-flex-container:hover
+	+ .banner-content-flex
+	.banner-content {
+	background: white;
+}
+
+.temp-banner-heading-flex-container:hover
+	+ .banner-content-flex
+	.banner-content
+	p {
+	color: black;
+}
+
 .banner-heading-flex-container:hover + .banner-content-flex .banner-poster {
 	border: 3px white solid;
+	padding: 15px;
+}
+
+.temp-banner-heading-flex-container:hover
+	+ .banner-content-flex
+	.banner-poster {
+	border: 1px white solid;
 	padding: 15px;
 }
 
@@ -405,6 +511,18 @@ a {
 	background: rgb(255, 255, 255);
 	transform: scale(1.05);
 }
+.banner-content-flex:hover
+	~ .temp-banner-heading-flex-container
+	.banner-heading-flex
+	.banner-heading {
+	color: #ffffff;
+	-webkit-text-stroke: 2px rgb(0, 0, 0);
+	font-family: Arial, Helvetica, sans-serif;
+	background: rgb(255, 255, 255);
+	transform: scale(1.05);
+}
+
+
 .banner-info-flex {
 	height: 40px;
 	width: 100%;
@@ -848,51 +966,6 @@ a {
 	text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
-.register-now-button {
-	background: transparent;
-	min-width: 300px;
-	border: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	width: 100%;
-	bottom: 525px;
-}
-
-.register-now-button a {
-	background: transparent;
-	min-width: 300px;
-	border: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-decoration: none;
-}
-
-.register-now-button p {
-	text-align: center;
-	background-image: linear-gradient(
-		to right,
-		#1c1cf0,
-		#40dfe4,
-		#30dd8a,
-		#269660
-	);
-	padding: 10px;
-	background-size: 300% 100%;
-	width: 100%;
-	color: white;
-	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
-	border-radius: 30px;
-	border: none;
-	transition: 0.3s;
-}
-
-.register-now-button p:hover {
-	background-position: 100% 0;
-	text-shadow: 0 0 10px white;
-}
 /* media queries */
 @media only screen and (max-width: 1300px) {
 	.banner-content-flex {
@@ -918,6 +991,10 @@ a {
 		background-color: rgba(0, 0, 0, 0.7);
 	}
 	.banner-heading-flex-container {
+		margin: 0 10px;
+		bottom: 630px;
+	}
+	.temp-banner-heading-flex-container {
 		margin: 0 10px;
 		bottom: 630px;
 	}
@@ -1131,5 +1208,9 @@ a {
 		font-size: 15px;
 		color: red;
 		text-shadow: 0 0 5px rgb(255, 0, 0);
+	}
+
+	.temp-banner-heading-flex-container img {
+		height: 100px;
 	}
 }

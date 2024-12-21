@@ -18,9 +18,12 @@ import Particless from "../Common/Particles/Particless";
 import video1 from "./Video/final.mp4";
 import certificate from "../../assets/KDSH2022Certificates/Akash Kundu.png";
 import Header from "./Header/Header";
-import title_sponsor from "./../../assets/kdsh2025_title_sponsor.jpg";
-import media_sponsor_1 from "./../../assets/kdsh2025_media_sponsor_1.jpg";
-import media_sponsor_2 from "./../../assets/kdsh2025_media_sponsor_2.jpg";
+import title_sponsor from "./../../assets/kdsh2025_pathway.png";
+import media_sponsor_1 from "./../../assets/kdsh2025_media_sponsor_11.png";
+import media_sponsor_2 from "./../../assets/kdsh2025_media_sponsor_22.png";
+import media_sponsor_3 from "./../../assets/kdsh2025_media_sponsor_33.png";
+import media_sponsor_4 from "./../../assets/kdsh2025_media_sponsor_44.png";
+import kdsh2025_logo from "./../../assets/kdsh2025_logo.png";
 
 const LandingPage = () => {
 	const eligibleCandidates = [
@@ -257,7 +260,7 @@ const LandingPage = () => {
 				{/* banner main starts */}
 				<div className="banner-main">
 					<div className="banner-image-div"></div>
-					<div className="banner-heading-flex-container">
+					{/* <div className="banner-heading-flex-container">
 						<div className="banner-heading-flex">
 							<div className="banner-heading">
 								<h3 style={{ fontSize: "35px", fontWeight: "600" }}>
@@ -265,7 +268,12 @@ const LandingPage = () => {
 								</h3>
 							</div>
 						</div>
+					</div> */}
+
+					<div className="temp-banner-heading-flex-container">
+						<img src={kdsh2025_logo} alt="" />
 					</div>
+
 					<div className="banner-content-flex">
 						<img
 							className="banner-poster"
@@ -273,7 +281,7 @@ const LandingPage = () => {
 							alt="Poster"
 							// height={250}
 						/>
-						<div className="banner-content">	
+						<div className="banner-content">
 							<p>
 								We are thrilled to announce <strong>Pathway</strong> as the{" "}
 								<strong>Title Sponsor</strong> for the Kharagpur Data Science
@@ -318,6 +326,11 @@ const LandingPage = () => {
 						Introducing Sponsors for KDSH 2025
 					</div>
 
+					<div className="kdsh2025-title-sponsor">
+						<div className="kdsh2025_title_sponsor_intro">Title Sponsor</div>
+						<img src={title_sponsor} alt="title_sponsor" />
+					</div>
+
 					<div className="kdsh2025-sponsor-slider">
 						<ul>
 							<li>
@@ -330,10 +343,10 @@ const LandingPage = () => {
 								<img src={media_sponsor_2} alt="title_sponsor" />
 							</li>
 							<li>
-								<img src={title_sponsor} alt="title_sponsor" />
+								<img src={media_sponsor_3} alt="title_sponsor" />
 							</li>
 							<li>
-								<img src={media_sponsor_1} alt="title_sponsor" />
+								<img src={media_sponsor_4} alt="title_sponsor" />
 							</li>
 							<li>
 								<img src={media_sponsor_2} alt="title_sponsor" />
@@ -351,10 +364,10 @@ const LandingPage = () => {
 								<img src={media_sponsor_2} alt="title_sponsor" />
 							</li>
 							<li>
-								<img src={title_sponsor} alt="title_sponsor" />
+								<img id="daze" src={media_sponsor_3} alt="title_sponsor" />
 							</li>
 							<li>
-								<img src={media_sponsor_1} alt="title_sponsor" />
+								<img src={media_sponsor_4} alt="title_sponsor" />
 							</li>
 							<li>
 								<img src={media_sponsor_2} alt="title_sponsor" />

@@ -15,6 +15,7 @@ import degree_icon from "./../../assets/kdsh2025_degree.png";
 import YOS_icon from "./../../assets/kdsh2025_YOS.png";
 import github_icon from "./../../assets/kdsh2025_github.png";
 import gender_icon from "./../../assets/kdsh2025_gender.png";
+import kdsh_2025 from "./../../assets/kdsh2025_logo.png"
 
 const RegisterPage = () => {
 	const particless = React.useMemo(() => <Particless />, []);
@@ -367,13 +368,19 @@ const RegisterPage = () => {
 		setTeam(value);
 	};
 
+	const handleKdshClick = (e) => {
+		history.push("/");
+	}
+
 	return (
 		<>
 			<div className="register-container">
 				<Fade top>
 					<div className="register-header">
 						<div className="spacer layer1"></div>
-						<div className="register-kdsh">KDSH 2025</div>
+						<div className="register-kdsh">
+							<img src={kdsh_2025} alt="KDSH2025" onClick={handleKdshClick}/>
+						</div>
 						<div className="register-kdsh-desc">
 							<p>
 								The 5th Edition of the{" "}
