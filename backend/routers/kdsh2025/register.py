@@ -184,14 +184,14 @@ def check_multiple_stars():
 
         num_members = len(data)
 
-        if num_members < 2:
+        if num_members < 1:
             return (
-                jsonify({"error": "There must be at least 2 members in the team."}),
+                jsonify({"error": "There must be at least 1 member in the team."}),
                 400,
             )
-        elif num_members > 5:
+        elif num_members > 4:
             return (
-                jsonify({"error": "There can be a maximum of 5 members in the team."}),
+                jsonify({"error": "There can be a maximum of 4 members in the team."}),
                 400,
             )
 

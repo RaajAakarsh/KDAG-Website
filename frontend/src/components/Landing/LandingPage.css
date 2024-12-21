@@ -371,9 +371,27 @@ a {
 	flex-direction: row;
 	padding-right: 5.7%;
 	justify-content: space-between;
-	margin: 0 200px;
+	margin: 0 0px;
+  padding-right: 170px;
 }
 
+.banner-poster img {
+	box-shadow: 0 0 2px white;
+}
+.banner-content {
+	position: relative;
+	top: 0;
+	right: -40px;
+	width: 500px;
+	text-align: justify;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	font-size: 15px;
+	font-weight: 600;
+	transition: all 1s;
+}
 
 .register-now-button {
 	background: transparent;
@@ -430,23 +448,7 @@ a {
 	transition: all 0.4s;
 	box-shadow: 0 0 3px white;
 }
-.banner-poster img {
-	box-shadow: 0 0 2px white;
-}
-.banner-content {
-	position: relative;
-	top: 0;
-	right: -40px;
-	width: 500px;
-	text-align: justify;
-	padding: 20px;
-	background: rgba(255, 255, 255, 0.06);
-	backdrop-filter: blur(10px);
-	border-radius: 20px;
-	font-size: 15px;
-	font-weight: 600;
-	transition: all 1s;
-}
+
 /* .banner-list {
 	margin-left: 20px;
 
@@ -521,7 +523,6 @@ a {
 	background: rgb(255, 255, 255);
 	transform: scale(1.05);
 }
-
 
 .banner-info-flex {
 	height: 40px;
@@ -969,7 +970,7 @@ a {
 /* media queries */
 @media only screen and (max-width: 1300px) {
 	.banner-content-flex {
-		margin: 0 80px;
+		/* margin: 0 80px; */
 	}
 
 	.banner-content {
@@ -1024,7 +1025,7 @@ a {
 		align-items: center;
 	}
 	.banner-poster {
-		height: 100%;
+    max-width: 100vw;
 		position: relative;
 		top: -15px;
 		left: 0px;
