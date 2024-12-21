@@ -22,7 +22,7 @@ import title_sponsor from "./../../assets/kdsh2025_pathway.png";
 import media_sponsor_1 from "./../../assets/kdsh2025_media_sponsor_11.png";
 import media_sponsor_2 from "./../../assets/kdsh2025_media_sponsor_22.png";
 import media_sponsor_3 from "./../../assets/kdsh2025_media_sponsor_33.png";
-import media_sponsor_4 from "./../../assets/kdsh2025_media_sponsor_44.png";
+import media_sponsor_4 from "./../../assets/kdsh2025_media_sponsor_44 - Copy.png";
 import kdsh2025_logo from "./../../assets/kdsh2025_logo.png";
 import kdsh_2025_banner from "./../../assets/kdsh2025_hackathon_poster.jpg";
 
@@ -179,7 +179,6 @@ const LandingPage = () => {
 	const handleTitleClick = () => {
 		window.open("https://pathway.com/", "_blank", "noopener,noreferrer");
 	};
-
 	const handleYouthInc = () => {
 		window.open("https://youthincmag.com/", "_blank", "noopener,noreferrer");
 	};
