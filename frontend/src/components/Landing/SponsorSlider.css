@@ -60,6 +60,8 @@
 	z-index: 30;
 	gap: 2rem;
 	padding-top: 15px;
+	background-image: url("./../../assets/kdsh2025_polygon_scatter.svg");
+	/* border: red 2px solid; */
 }
 
 .kdsh2025-sponsor-slider ul {
@@ -80,7 +82,7 @@
 .kdsh2025-sponsor-slider ul li img {
 	height: 295px;
 	border-radius: 15px;
-	box-shadow: 0 0 10px rgba(0, 255, 255, 0.286);
+	/* box-shadow: 0 0 10px rgba(0, 255, 255, 0.286); */
 	/* min-width: 295px; */
 }
 
