@@ -16,6 +16,7 @@ import YOS_icon from "./../../assets/kdsh2025_YOS.png";
 import github_icon from "./../../assets/kdsh2025_github.png";
 import gender_icon from "./../../assets/kdsh2025_gender.png";
 import kdsh_2025 from "./../../assets/kdsh2025_logo.png"
+import kdsh_2025_banner from "./../../assets/kdsh2025_hackathon_poster.jpg"
 
 const RegisterPage = () => {
 	const particless = React.useMemo(() => <Particless />, []);
@@ -314,24 +315,24 @@ const RegisterPage = () => {
 		setGitHubID5,
 	} = useFormStates();
 
-	const [numMembers, setNumMembers] = useState(2);
+	const [numMembers, setNumMembers] = useState(1);
 	const [team, setTeam] = useState("");
 
 	const handleNumMembers = (e) => {
 		const value = e.target.value;
-		if (value > 5) {
-			toast.error("There can be a maximum of 5 participants in a team!", {
+		if (value > 4) {
+			toast.error("There can be a maximum of 4 participants in a team!", {
 				position: "top-center",
 				draggable: true,
 				theme: "dark",
 			});
-		} else if (value < 2) {
-			toast.error("There have to be a minimum of 2 members in a team!", {
+		} else if (value < 1) {
+			toast.error("There has to be at least one member in a team!!!", {
 				position: "top-center",
 				draggable: true,
 				theme: "dark",
 			});
-		} else if (value <= 5) {
+		} else if (value <= 4) {
 			setNumMembers(Number(value));
 		}
 	};
@@ -563,9 +564,9 @@ const RegisterPage = () => {
 										/>
 									</div>
 								</>
-								<div className="register-form-details">Details of Member 2</div>
+								{/* <div className="register-form-details">Details of Member 2</div> */}
 								{/* 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222 */}
-								<>
+								{/* <>
 									<div className="register-form-icons">
 										<img src={user_icon} alt="user" />
 										<input
@@ -668,12 +669,12 @@ const RegisterPage = () => {
 											onChange={(e) => setGitHubID2(e.target.value)}
 										/>
 									</div>
-								</>
+								</> */}
 								{/* 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 */}
-								{numMembers >= 3 && (
+								{numMembers >= 2 && (
 									<>
 										<div className="register-form-details">
-											Details of Member 3
+											Details of Member 2
 										</div>
 
 										<>
@@ -783,10 +784,10 @@ const RegisterPage = () => {
 									</>
 								)}
 								{/* 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 */}
-								{numMembers >= 4 && (
+								{numMembers >= 3 && (
 									<>
 										<div className="register-form-details">
-											Details of Member 4
+											Details of Member 3
 										</div>
 
 										<>
@@ -896,10 +897,10 @@ const RegisterPage = () => {
 									</>
 								)}
 								{/* 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */}
-								{numMembers === 5 && (
+								{numMembers === 4 && (
 									<>
 										<div className="register-form-details">
-											Details of Member 5
+											Details of Member 4
 										</div>
 
 										<>

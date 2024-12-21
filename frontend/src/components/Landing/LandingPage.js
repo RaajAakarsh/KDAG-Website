@@ -24,6 +24,7 @@ import media_sponsor_2 from "./../../assets/kdsh2025_media_sponsor_22.png";
 import media_sponsor_3 from "./../../assets/kdsh2025_media_sponsor_33.png";
 import media_sponsor_4 from "./../../assets/kdsh2025_media_sponsor_44.png";
 import kdsh2025_logo from "./../../assets/kdsh2025_logo.png";
+import kdsh_2025_banner from "./../../assets/kdsh2025_hackathon_poster.jpg";
 
 const LandingPage = () => {
 	const eligibleCandidates = [
@@ -175,6 +176,28 @@ const LandingPage = () => {
 	//   });
 	// }, []);
 
+	const handleTitleClick = () => {
+		window.open("https://pathway.com/", "_blank", "noopener,noreferrer");
+	};
+
+	const handleYouthInc = () => {
+		window.open("https://youthincmag.com/", "_blank", "noopener,noreferrer");
+	};
+	const handleDazeInfo = () => {
+		window.open("https://dazeinfo.com/", "_blank", "noopener,noreferrer");
+	};
+	const handleTheAca = () => {
+		window.open(
+			"https://theacademicinsights.com/",
+			"_blank",
+			"noopener,noreferrer"
+		);
+	};
+
+	const handleStock = () => {
+		window.open("https://stockedge.com/", "_blank", "noopener,noreferrer");
+	};
+
 	return (
 		<>
 			{/* <div id="modal-click" className="modal-background">
@@ -277,7 +300,7 @@ const LandingPage = () => {
 					<div className="banner-content-flex">
 						<img
 							className="banner-poster"
-							src={KDSH5thEdition}
+							src={kdsh_2025_banner}
 							alt="Poster"
 							// height={250}
 						/>
@@ -334,43 +357,92 @@ const LandingPage = () => {
 					<div className="kdsh2025-sponsor-slider">
 						<ul>
 							<li>
-								<img src={title_sponsor} alt="title_sponsor" />
+								<img
+									src={title_sponsor}
+									alt="title_sponsor"
+									onClick={handleTitleClick}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_1} alt="title_sponsor" />
+								<img
+									src={media_sponsor_1}
+									alt="title_sponsor"
+									onClick={handleYouthInc}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_2} alt="title_sponsor" />
+								<img
+									src={media_sponsor_2}
+									alt="title_sponsor"
+									onClick={handleTheAca}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_3} alt="title_sponsor" />
+								<img
+									src={media_sponsor_3}
+									alt="title_sponsor"
+									onClick={handleDazeInfo}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_4} alt="title_sponsor" />
+								<img
+									src={media_sponsor_4}
+									alt="title_sponsor"
+									onClick={handleStock}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_2} alt="title_sponsor" />
+								<img
+									src={media_sponsor_2}
+									alt="title_sponsor"
+									onClick={handleTheAca}
+								/>
 							</li>
 						</ul>
 
 						<ul aria-hidden="true">
 							<li>
-								<img src={title_sponsor} alt="title_sponsor" />
+								<img
+									src={title_sponsor}
+									alt="title_sponsor"
+									onClick={handleTitleClick}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_1} alt="title_sponsor" />
+								<img
+									src={media_sponsor_1}
+									alt="title_sponsor"
+									onClick={handleYouthInc}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_2} alt="title_sponsor" />
+								<img
+									src={media_sponsor_2}
+									alt="title_sponsor"
+									onClick={handleTheAca}
+								/>
 							</li>
 							<li>
-								<img id="daze" src={media_sponsor_3} alt="title_sponsor" />
+								<img
+									id="daze"
+									src={media_sponsor_3}
+									alt="title_sponsor"
+									onClick={handleDazeInfo}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_4} alt="title_sponsor" />
+								<img
+									src={media_sponsor_4}
+									alt="title_sponsor"
+									onClick={handleStock}
+								/>
 							</li>
 							<li>
-								<img src={media_sponsor_2} alt="title_sponsor" />
+								<img
+									src={media_sponsor_2}
+									alt="title_sponsor"
+									onClick={handleTheAca}
+								/>
 							</li>
 						</ul>
 					</div>
