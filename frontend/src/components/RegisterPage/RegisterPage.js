@@ -60,14 +60,15 @@ const RegisterPage = () => {
 				college: college4,
 				YOS: YOS4,
 				GitHubID: GitHubID4,
-			},
-			{
-				firstname: firstname5,
-				mobile: mobile5,
-				college: college5,
-				YOS: YOS5,
-				GitHubID: GitHubID5,
-			},
+			}
+			// ,
+			// {
+			// 	firstname: firstname5,
+			// 	mobile: mobile5,
+			// 	college: college5,
+			// 	YOS: YOS5,
+			// 	GitHubID: GitHubID5,
+			// },
 		];
 
 		const allSubmitSuccessful = checkData
@@ -139,27 +140,28 @@ const RegisterPage = () => {
 					GitHubID: GitHubID4,
 					teamName: team,
 					numMembers: Number(numMembers),
-				},
-				{
-					isTeamLeader: false,
-					firstname: firstname5,
-					lastname: lastname5,
-					gender: gender5,
-					mail: mail5,
-					mobile: mobile5,
-					college: college5,
-					degree: degree5,
-					YOS: Number(YOS5),
-					GitHubID: GitHubID5,
-					teamName: team,
-					numMembers: Number(numMembers),
-				},
+				}
+				// ,
+				// {
+				// 	isTeamLeader: false,
+				// 	firstname: firstname5,
+				// 	lastname: lastname5,
+				// 	gender: gender5,
+				// 	mail: mail5,
+				// 	mobile: mobile5,
+				// 	college: college5,
+				// 	degree: degree5,
+				// 	YOS: Number(YOS5),
+				// 	GitHubID: GitHubID5,
+				// 	teamName: team,
+				// 	numMembers: Number(numMembers),
+				// },
 			];
 			const finalData = formData.slice(0, numMembers);
 
-			if (numMembers > 5 || numMembers < 2) {
+			if (numMembers > 4 || numMembers < 1) {
 				toast.error(
-					"Please note a minimum of 1 and a maximum of 5 members are allowed per team."
+					"Please note a minimum of 1 and a maximum of 4 members are allowed per team."
 				);
 				return false;
 			}
