@@ -15,13 +15,21 @@ import degree_icon from "./../../assets/kdsh2025_degree.png";
 import YOS_icon from "./../../assets/kdsh2025_YOS.png";
 import github_icon from "./../../assets/kdsh2025_github.png";
 import gender_icon from "./../../assets/kdsh2025_gender.png";
-import kdsh_2025 from "./../../assets/kdsh2025_logo.png"
-import kdsh_2025_banner from "./../../assets/kdsh2025_hackathon_poster.jpg"
+import kdsh_2025 from "./../../assets/kdsh2025_logo.png";
+import show_icon from "./../../assets/show_icon.png";
+import repo1 from "./../../assets/llm_repo.png";
+import repo2 from "./../../assets/pathway_repo.png";
+import starred from "./../../assets/starred_repo.png";
 
 const RegisterPage = () => {
 	const particless = React.useMemo(() => <Particless />, []);
 	const [successPage, setSuccessPage] = useState(false);
 	const history = useHistory();
+	const [showHowTo, setShowHowTo] = useState(false);
+
+	const handleShowHowTo = () => {
+		setShowHowTo(!showHowTo);
+	};
 
 	useEffect(() => {
 		if (successPage) {
@@ -60,7 +68,7 @@ const RegisterPage = () => {
 				college: college4,
 				YOS: YOS4,
 				GitHubID: GitHubID4,
-			}
+			},
 			// ,
 			// {
 			// 	firstname: firstname5,
@@ -140,7 +148,7 @@ const RegisterPage = () => {
 					GitHubID: GitHubID4,
 					teamName: team,
 					numMembers: Number(numMembers),
-				}
+				},
 				// ,
 				// {
 				// 	isTeamLeader: false,
@@ -168,6 +176,7 @@ const RegisterPage = () => {
 
 			const registerPromise = fetch(
 				`${process.env.REACT_APP_FETCH_URL}/kdsh2025/check_register`,
+				// "http://localhost:5000/kdsh2025/check_register",
 				{
 					method: "POST",
 					headers: {
@@ -196,14 +205,14 @@ const RegisterPage = () => {
 				})
 				.catch((error) => {
 					console.error("Error during registration:", error);
-					toast.error("Registration failed, please try again later.");
+					toast.error("😔 Registration failed, please try again later.");
 				});
 			toast.promise(
 				registerPromise,
 				{
 					pending:
-						"Registering your team...This may take a few minutes, Please stay with us!!!",
-					error: "Registration failed. Please try again.",
+						"⏳ Registering your team...This may take several minutes, Please stay with us!!!",
+					error: "😔 Registration failed. Please try again LATER!!",
 				},
 				{
 					position: "top-center",
@@ -372,7 +381,7 @@ const RegisterPage = () => {
 
 	const handleKdshClick = (e) => {
 		history.push("/");
-	}
+	};
 
 	return (
 		<>
@@ -381,7 +390,7 @@ const RegisterPage = () => {
 					<div className="register-header">
 						<div className="spacer layer1"></div>
 						<div className="register-kdsh">
-							<img src={kdsh_2025} alt="KDSH2025" onClick={handleKdshClick}/>
+							<img src={kdsh_2025} alt="KDSH2025" onClick={handleKdshClick} />
 						</div>
 						<div className="register-kdsh-desc">
 							<p>
@@ -394,12 +403,15 @@ const RegisterPage = () => {
 							</p>
 
 							<p>
-								To participate, please fill in your details in the form below.
+								To participate, please fill in your details in the form provided
+								below.
 							</p>
 
-							<p>
-								Before registering, kindly ensure all your team members have
-								starred the following GitHub repositories:
+							<p style={{ color: "#00ff11" }}>
+								<strong>
+									Before registering, kindly ensure all your team members have
+									starred the following GitHub repositories:
+								</strong>
 							</p>
 
 							<ul>
@@ -427,6 +439,70 @@ const RegisterPage = () => {
 						</div>
 					</div>
 				</Fade>
+				<Fade right>
+					<div className="kdsh2025_star_outer">
+						<div className="kdsh2025_star_header">
+							<span>💻 How to Star a repository ? 🤔</span>
+							<button onClick={handleShowHowTo}>
+								<img src={show_icon} alt="show" />
+							</button>
+						</div>
+						{showHowTo && (
+							<div className="kdsh2025_star_content">
+								<p
+									style={{
+										fontSize: "20px",
+										fontWeight: "600",
+										marginBottom: "30px",
+									}}
+								>
+									Starring a repository is a simple two-step process.
+								</p>
+								<div className="step_one" style={{ marginBottom: "50px" }}>
+									<p className="kdsh2025_list_label">1</p>{" "}
+									<span>
+										Log in to GitHub and go to the repository's main page. Click
+										the Star button in the top-right corner as shown:
+									</span>
+									<p
+										style={{
+											margin: "0px",
+											paddingLeft: "40px",
+											fontWeight: "600",
+											paddingBottom: "8px",
+										}}
+									>
+										Repository 1 :{" "}
+										<a href="https://github.com/pathwaycom/llm-app">
+											https://github.com/pathwaycom/llm-app
+										</a>
+									</p>
+									<img src={repo1} alt="repo1" />
+									<p
+										style={{
+											margin: "0px",
+											paddingLeft: "40px",
+											fontWeight: "600",
+											paddingBottom: "8px",
+										}}
+									>
+										Repository 2 :{" "}
+										<a href="https://github.com/pathwaycom/pathway">
+											https://github.com/pathwaycom/pathway
+										</a>
+									</p>
+									<img src={repo2} alt="repo1" />
+								</div>
+								<div className="step_two">
+									<p className="kdsh2025_list_label">2</p>{" "}
+									<span>After successfully starring, the icon updates to:</span>
+									<img src={starred} alt="starred" />
+								</div>
+							</div>
+						)}
+					</div>
+				</Fade>
+
 				<Fade left>
 					<div className="register-form">
 						<form onSubmit={handleRegister}>
