@@ -168,7 +168,7 @@ def check_starred_repositories(missing_repos_by_users):
     else:
         message = (
             " ".join(missing_repos_messages)
-            + " Kindly star the repositories to successfully register your team!"
+            + " Kindly click on the links provided in the description to star the repositories to successfully register your team!"
         )
         return message
 
@@ -276,7 +276,7 @@ def check_multiple_stars():
         starred_users = check_starred_repositories(missing_repos_by_users)
 
         if starred_users != "success":
-            return jsonify({"error": "55:>> " + starred_users}), 400
+            return jsonify({"error": "Please note that " + starred_users + "55:>> "}), 400
 
         elif starred_users == "success":
             print("The members have starred the github id")

@@ -192,7 +192,6 @@ const LandingPage = () => {
 			"noopener,noreferrer"
 		);
 	};
-
 	const handleStock = () => {
 		window.open("https://stockedge.com/", "_blank", "noopener,noreferrer");
 	};
