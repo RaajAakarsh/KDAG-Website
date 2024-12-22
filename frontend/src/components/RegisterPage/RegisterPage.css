@@ -210,7 +210,7 @@ input[type="number"] {
 
 @media (max-width: 880px) {
 	.register-container .register-header .register-kdsh {
-		top: 50px;
+		top: 90px;
 		left: 26%;
 		font-size: 45px;
 		padding: 5px 25px;
@@ -229,7 +229,7 @@ input[type="number"] {
 
 @media (max-width: 750px) {
 	.register-container .register-header .register-kdsh {
-		top: 50px;
+		top: 95px;
 		left: 24%;
 		font-size: 45px;
 		padding: 5px 25px;
@@ -238,7 +238,7 @@ input[type="number"] {
 	.register-container .register-header .register-kdsh-desc {
 		padding: 20px;
 		font-weight: 600;
-		top: 200px;
+		top: 250px;
 		margin: 0 90px;
 	}
 	.register-form {
@@ -248,7 +248,7 @@ input[type="number"] {
 
 @media (max-width: 700px) {
 	.register-container .register-header .register-kdsh {
-		top: 50px;
+		top: 95px;
 		left: 22%;
 		font-size: 45px;
 		padding: 5px 25px;
@@ -257,7 +257,7 @@ input[type="number"] {
 	.register-container .register-header .register-kdsh-desc {
 		padding: 20px;
 		font-weight: 600;
-		top: 200px;
+		top: 250px;
 		margin: 0 50px;
 		font-size: 18px;
 	}
@@ -268,7 +268,7 @@ input[type="number"] {
 
 @media (max-width: 575px) {
 	.register-container .register-header .register-kdsh {
-		top: 50px;
+		top: 85px;
 		left: 14%;
 		font-size: 45px;
 		padding: 5px 25px;
@@ -298,7 +298,7 @@ input[type="number"] {
 
 @media (max-width: 500px) {
 	.register-container .register-header .register-kdsh {
-		top: 35px;
+		top: 85px;
 		left: 12%;
 		font-size: 45px;
 		padding: 5px 25px;
@@ -307,7 +307,7 @@ input[type="number"] {
 	.register-container .register-header .register-kdsh-desc {
 		padding: 20px;
 		font-weight: 600;
-		top: 160px;
+		top: 200px;
 		margin: 0 40px;
 		font-size: 16px;
 	}
@@ -322,7 +322,7 @@ input[type="number"] {
 
 @media (max-width: 460px) {
 	.register-container .register-header .register-kdsh {
-		top: 35px;
+		top: 80px;
 		left: 10%;
 		font-size: 35px;
 		padding: 5px 25px;
@@ -331,7 +331,7 @@ input[type="number"] {
 	.register-container .register-header .register-kdsh-desc {
 		padding: 20px;
 		font-weight: 600;
-		top: 160px;
+		top: 200px;
 		margin: 0 30px;
 		font-size: 16px;
 	}
@@ -383,8 +383,8 @@ input[type="number"] {
 
 @media (max-width: 395px) {
 	.register-container .register-header .register-kdsh {
-		top: 35px;
-		left: 6%;
+		top: 80px;
+		left: 4%;
 		font-size: 35px;
 		padding: 5px 25px;
 	}
@@ -392,7 +392,7 @@ input[type="number"] {
 	.register-container .register-header .register-kdsh-desc {
 		padding: 20px;
 		font-weight: 600;
-		top: 160px;
+		top: 200px;
 		margin: 0 20px;
 		font-size: 16px;
 	}
