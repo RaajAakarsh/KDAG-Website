@@ -295,6 +295,7 @@ def check_multiple_stars():
             if existing_participants:
                 existing_participants_message = ", ".join(existing_participants)
                 return (
+                    print("failed to insert to participants database -- " , gitHub_users)
                     jsonify(
                         {
                             "error": f"GitHub user(s) {existing_participants_message} already have registered."
@@ -306,6 +307,7 @@ def check_multiple_stars():
             # Step 2: Check if the team already exists
             existing_team = mongo.db.kdsh2025_teams.find_one({"teamName": team_name})
             if existing_team:
+                print("team already exists -- " , gitHub_users)
                 return (
                     jsonify({"error": f"Team with name {team_name} already exists."}),
                     400,
@@ -333,6 +335,7 @@ def check_multiple_stars():
             try:
                 mongo.db.kdsh2025_participants.insert_many(participants_data)
             except Exception as e:
+                print("failed to insert to participants database -- " , gitHub_users)
                 return (
                     jsonify({"error": "Failed to insert participants data: " + str(e)}),
                     500,
@@ -356,12 +359,14 @@ def check_multiple_stars():
             try:
                 mongo.db.kdsh2025_teams.insert_one(team_data)
             except Exception as e:
+                print("failed to insert to team database -- " , gitHub_users)
                 return (
                     jsonify({"error": "Failed to insert team data: " + str(e)}),
                     500,
                 )
 
             # Step 5: Send success message
+            print(gitHub_users)
             return (
                 jsonify(
                     {
