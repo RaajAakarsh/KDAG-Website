@@ -159,7 +159,7 @@ const RegisterPage = () => {
 
 			if (numMembers > 5 || numMembers < 2) {
 				toast.error(
-					"Please note a minimum of 2 and a maximum of 5 members are allowed per team."
+					"Please note a minimum of 1 and a maximum of 5 members are allowed per team."
 				);
 				return false;
 			}
