@@ -204,6 +204,7 @@ def check_multiple_stars():
                 400,
             )
         if len(set(num_members_)) != 1:
+            print("num members <11> -- ")
             return (
                 jsonify(
                     {
@@ -213,6 +214,7 @@ def check_multiple_stars():
                 400,
             )
         if not num_members == data[0]["numMembers"]:
+            print("num members <11> -- ")
             return (
                 jsonify(
                     {
@@ -226,11 +228,13 @@ def check_multiple_stars():
         try:
             team_names = [member["teamName"] for member in data]
         except KeyError as e:
+            print("missing team name on one of the member objects -- ")
             return (
                 jsonify({"error": f"Missing key: {str(e)} in one or more members."}),
                 400,
             )
         if len(set(team_names)) != 1:
+            print("team name somehow not same for all -- ")
             return (
                 jsonify(
                     {
@@ -244,11 +248,13 @@ def check_multiple_stars():
         try:
             gitHub_users = [member["GitHubID"] for member in data]
         except KeyError as e:
+            print("missing github ids -- " , gitHub_users)
             return (
                 jsonify({"error": f"Missing key: {str(e)} in one or more members."}),
                 400,
             )
         if len(gitHub_users) != len(set(gitHub_users)):
+            print("duplicate github id found -- " , gitHub_users)
             return (
                 jsonify(
                     {
@@ -262,6 +268,7 @@ def check_multiple_stars():
             return jsonify({"error": "GitHub users are required."}), 400
         for member in data:
             if not member.get("GitHubID"):
+                print("githubid missing -- " , gitHub_users)
                 return (
                     jsonify(
                         {
@@ -294,8 +301,8 @@ def check_multiple_stars():
 
             if existing_participants:
                 existing_participants_message = ", ".join(existing_participants)
+                print("one of the participants has already registered -- " , gitHub_users)
                 return (
-                    print("failed to insert to participants database -- " , gitHub_users)
                     jsonify(
                         {
                             "error": f"GitHub user(s) {existing_participants_message} already have registered."
