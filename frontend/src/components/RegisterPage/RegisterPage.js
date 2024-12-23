@@ -407,7 +407,13 @@ const RegisterPage = () => {
 								below.
 							</p>
 
-							<p style={{ color: "#00ff11" }}>
+							<p
+								style={{
+									color: "#00ff11",
+									borderTop: "solid 2px white",
+									paddingTop: "45px",
+								}}
+							>
 								<strong>
 									Before registering, kindly ensure all your team members have
 									starred the following GitHub repositories:
@@ -421,6 +427,7 @@ const RegisterPage = () => {
 										href="https://github.com/pathwaycom/pathway"
 										target="_blank"
 										rel="noreferrer noopener"
+										style={{ cursor: "pointer" }}
 									>
 										👉 Pathway
 									</a>
@@ -431,6 +438,7 @@ const RegisterPage = () => {
 										href="https://github.com/pathwaycom/llm-app"
 										target="_blank"
 										rel="noreferrer noopener"
+										style={{ cursor: "pointer" }}
 									>
 										👉 LLM App
 									</a>

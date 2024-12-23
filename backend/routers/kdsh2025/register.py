@@ -248,13 +248,13 @@ def check_multiple_stars():
         try:
             gitHub_users = [member["GitHubID"] for member in data]
         except KeyError as e:
-            print("missing github ids -- " , gitHub_users)
+            print("missing github ids -- ", gitHub_users)
             return (
                 jsonify({"error": f"Missing key: {str(e)} in one or more members."}),
                 400,
             )
         if len(gitHub_users) != len(set(gitHub_users)):
-            print("duplicate github id found -- " , gitHub_users)
+            print("duplicate github id found -- ", gitHub_users)
             return (
                 jsonify(
                     {
@@ -268,7 +268,7 @@ def check_multiple_stars():
             return jsonify({"error": "GitHub users are required."}), 400
         for member in data:
             if not member.get("GitHubID"):
-                print("githubid missing -- " , gitHub_users)
+                print("githubid missing -- ", gitHub_users)
                 return (
                     jsonify(
                         {
@@ -282,9 +282,60 @@ def check_multiple_stars():
         missing_repos_by_users = check_repositories(gitHub_users)
         starred_users = check_starred_repositories(missing_repos_by_users)
 
+        ########################################################################################################################
         if starred_users != "success":
-            return jsonify({"error": "Please note --- " + starred_users + "55:>> "}), 400
+            print("These members could NOT register successfully", gitHub_users)
+            team_name = data[0]["teamName"]
+            num_members = data[0]["numMembers"]
 
+            # Step 1: Check if any GitHub IDs already exist in participants collection
+            existing_participants = []
+            for user in gitHub_users:
+                existing_user = mongo.db.kdsh2025_failed_registrations.find_one(
+                    {"GitHubID": user}
+                )
+                if existing_user:
+                    existing_participants.append(user)
+
+            if existing_participants:
+                print(
+                    "some participants failed registration AGAIN!!!! -- ",
+                    existing_participants,
+                )
+
+            participants_data = []
+            for member in data:
+                if member["GitHubID"] not in existing_participants:
+                    participants_data.append(
+                        {
+                            "isTeamLeader": member["isTeamLeader"],
+                            "firstname": member["firstname"],
+                            "lastname": member["lastname"],
+                            "gender": member["gender"],
+                            "mail": member["mail"],
+                            "mobile": member["mobile"],
+                            "college": member["college"],
+                            "degree": member["degree"],
+                            "YOS": member["YOS"],
+                            "GitHubID": member["GitHubID"],
+                            "teamName": team_name,
+                            "numMembers": num_members,
+                        }
+                    )
+            try:
+                mongo.db.kdsh2025_failed_registrations.insert_many(participants_data)
+                print("successfully appended to failed_registrations database")
+            except Exception as e:
+                print(
+                    "failed to insert to failed registrations database -- ",
+                    gitHub_users,
+                )
+
+            return (
+                jsonify({"error": "Please note --- " + starred_users + " <<55>> "}),
+                400,
+            )
+        ##########################################################################################################################
         elif starred_users == "success":
             print("The members have starred the github id")
             team_name = data[0]["teamName"]
@@ -301,7 +352,9 @@ def check_multiple_stars():
 
             if existing_participants:
                 existing_participants_message = ", ".join(existing_participants)
-                print("one of the participants has already registered -- " , gitHub_users)
+                print(
+                    "one of the participants has already registered -- ", gitHub_users
+                )
                 return (
                     jsonify(
                         {
@@ -314,7 +367,7 @@ def check_multiple_stars():
             # Step 2: Check if the team already exists
             existing_team = mongo.db.kdsh2025_teams.find_one({"teamName": team_name})
             if existing_team:
-                print("team already exists -- " , gitHub_users)
+                print("team already exists -- ", gitHub_users)
                 return (
                     jsonify({"error": f"Team with name {team_name} already exists."}),
                     400,
@@ -342,7 +395,7 @@ def check_multiple_stars():
             try:
                 mongo.db.kdsh2025_participants.insert_many(participants_data)
             except Exception as e:
-                print("failed to insert to participants database -- " , gitHub_users)
+                print("failed to insert to participants database -- ", gitHub_users)
                 return (
                     jsonify({"error": "Failed to insert participants data: " + str(e)}),
                     500,
@@ -366,7 +419,7 @@ def check_multiple_stars():
             try:
                 mongo.db.kdsh2025_teams.insert_one(team_data)
             except Exception as e:
-                print("failed to insert to team database -- " , gitHub_users)
+                print("failed to insert to team database -- ", gitHub_users)
                 return (
                     jsonify({"error": "Failed to insert team data: " + str(e)}),
                     500,

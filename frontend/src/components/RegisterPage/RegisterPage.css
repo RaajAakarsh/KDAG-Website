@@ -49,18 +49,22 @@
 	color: aqua;
 	transition: all 0.3s;
 	width: max-content;
+	display: flex;
 }
 
 .register-container .register-header .register-kdsh-desc ul li {
 	border: solid rgba(255, 255, 255, 0.311) 2px;
 	padding: 5px;
-	margin-bottom: 10px;
+	margin-right: 20px;
 	overflow: hidden;
 	position: relative;
+	transition: all 0.2s;
+	cursor: pointer;
 }
 
 .register-container .register-header .register-kdsh-desc ul li:hover {
 	text-shadow: cyan 0 0 8px;
+	border: solid white 2px;
 }
 
 .register-container .register-header .register-kdsh-desc ul li::before {
@@ -85,6 +89,7 @@
 	animation: heading-slide-through 2s ease-in infinite;
 	transform-origin: bottom left;
 	z-index: -1;
+	cursor: pointer;
 }
 
 @keyframes heading-slide-through {
